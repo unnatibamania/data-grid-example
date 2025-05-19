@@ -7,6 +7,7 @@ import { data } from "./data/rows";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { User } from "./data/types";
+import { TrashIcon } from "lucide-react";
 
 export default function Home() {
   const [rows, setRows] = useState(data);
@@ -100,6 +101,19 @@ export default function Home() {
     );
   };
 
+  // Define rowActions as an array conforming to RowAction<User>[]
+  const rowActions: import("react-shadcn-datagrid").RowAction<User>[] = [
+    {
+      label: "Delete",
+      value: "delete",
+      icon: <TrashIcon />,
+      onClick: (row: User) => {
+        // onClick receives the specific row from the DataGrid
+        setRows((prevRows) => prevRows.filter((r) => r.id !== row.id));
+      },
+    },
+  ];
+
   return (
     <div className="h-screen flex flex-col gap-4 overflow-hidden">
       <section className="flex items-center w-full gap-4 flex-col mt-12 justify-center">
@@ -120,6 +134,7 @@ export default function Home() {
           columns={columns}
           rows={rows}
           onCellChange={handleCellChange}
+          rowActions={rowActions}
         />
       </div>
     </div>
