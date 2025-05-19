@@ -10,4 +10,6 @@ export interface User {
   previousExperience: number;
   agreedToTerms: boolean;
   canWorkOnWeekends: boolean;
+  avatarUrl?: string;
+  [key: string]: string | number | boolean | string[] | undefined;
 }

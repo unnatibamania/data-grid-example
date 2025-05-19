@@ -18,7 +18,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-shadcn-datagrid": "^0.1.4",
+    "react-shadcn-datagrid": "^0.1.6",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {

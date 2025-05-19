@@ -7,6 +7,17 @@ import { format, isValid } from "date-fns"; // Import format for cell display
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
+import {
+  SiNextjs,
+  SiTypescript,
+  SiDocker,
+  SiKubernetes,
+  SiCybersecurity,
+  SiCloudcomputing,
+  SiReact,
+  SiNodejs,
+} from "react-icons/si";
+
 const departmentOptions = [
   {
     label: "Frontend",
@@ -50,26 +61,32 @@ const skillOptions = [
   {
     label: "React",
     value: "react",
+    icon: <SiReact />,
   },
   {
     label: "Node.js",
     value: "nodejs",
+    icon: <SiNodejs />,
   },
   {
     label: "TypeScript",
     value: "typescript",
+    icon: <SiTypescript />,
   },
   {
     label: "Next.js",
     value: "nextjs",
+    icon: <SiNextjs />,
   },
   {
     label: "Docker",
     value: "docker",
+    icon: <SiDocker />,
   },
   {
     label: "Kubernetes",
     value: "kubernetes",
+    icon: <SiKubernetes />,
   },
   {
     label: "Ethical Hacking",
@@ -78,10 +95,12 @@ const skillOptions = [
   {
     label: "Cybersecurity",
     value: "cybersecurity",
+    icon: <SiCybersecurity />,
   },
   {
     label: "Cloud Computing",
     value: "cloudcomputing",
+    icon: <SiCloudcomputing />,
   },
   {
     label: "CI/CD",
@@ -96,7 +115,7 @@ export const columns: ColumnConfig<User>[] = [
     cell: (row) => (
       <div className="flex items-center gap-2">
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarImage src={row.avatarUrl} />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
 
@@ -190,10 +209,10 @@ export const columns: ColumnConfig<User>[] = [
   },
 
   {
-    id: "satisfaction",
-    header: "Satisfaction",
+    id: "previousExperience",
+    header: "Previous Experience",
     type: "rating",
-    label: "Satisfaction",
+    label: "Previous Experience",
     isEditable: true,
     isSortable: true,
     isDraggable: true,
