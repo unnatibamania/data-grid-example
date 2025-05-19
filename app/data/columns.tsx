@@ -7,17 +7,6 @@ import { format, isValid } from "date-fns"; // Import format for cell display
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import {
-  SiNextjs,
-  SiTypescript,
-  SiDocker,
-  SiKubernetes,
-  SiCybersecurity,
-  SiCloudcomputing,
-  SiReact,
-  SiNodejs,
-} from "react-icons/si";
-
 const departmentOptions = [
   {
     label: "Frontend",
@@ -61,32 +50,26 @@ const skillOptions = [
   {
     label: "React",
     value: "react",
-    icon: <SiReact />,
   },
   {
     label: "Node.js",
     value: "nodejs",
-    icon: <SiNodejs />,
   },
   {
     label: "TypeScript",
     value: "typescript",
-    icon: <SiTypescript />,
   },
   {
     label: "Next.js",
     value: "nextjs",
-    icon: <SiNextjs />,
   },
   {
     label: "Docker",
     value: "docker",
-    icon: <SiDocker />,
   },
   {
     label: "Kubernetes",
     value: "kubernetes",
-    icon: <SiKubernetes />,
   },
   {
     label: "Ethical Hacking",
@@ -95,12 +78,10 @@ const skillOptions = [
   {
     label: "Cybersecurity",
     value: "cybersecurity",
-    icon: <SiCybersecurity />,
   },
   {
     label: "Cloud Computing",
     value: "cloudcomputing",
-    icon: <SiCloudcomputing />,
   },
   {
     label: "CI/CD",
