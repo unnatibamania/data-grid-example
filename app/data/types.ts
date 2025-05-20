@@ -4,12 +4,12 @@ export interface User {
   email: string;
   phone: string;
   age: number;
-  joiningDate: string;
+  joiningDate: Date;
   department: string;
   skills: string[];
   previousExperience: number;
   agreedToTerms: boolean;
   canWorkOnWeekends: boolean;
   avatarUrl?: string;
-  [key: string]: string | number | boolean | string[] | undefined;
+  [key: string]: string | number | boolean | string[] | Date | undefined;
 }

@@ -42,12 +42,22 @@ export default function Home() {
             case "email":
             case "phone":
             case "department":
-            case "joiningDate":
               if (typeof newValue === "string") {
                 updatedRow[key] = newValue;
               } else if (newValue === null || newValue === undefined) {
                 updatedRow[key] = "";
               }
+              break;
+            case "joiningDate":
+              if (newValue instanceof Date) {
+                updatedRow[key] = newValue;
+              } else if (typeof newValue === "string") {
+                const dateValue = new Date(newValue);
+                if (!isNaN(dateValue.getTime())) {
+                  updatedRow[key] = dateValue;
+                }
+              }
+
               break;
             case "age":
             case "previousExperience":
@@ -135,6 +145,7 @@ export default function Home() {
           rows={rows}
           onCellChange={handleCellChange}
           rowActions={rowActions}
+          enableRowSelection
         />
       </div>
     </div>
